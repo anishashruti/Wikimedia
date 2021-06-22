@@ -1,0 +1,31 @@
+{% extends "encyclopedia/layout.html" %}
+{% load static %}
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <br>
+    <div class="indexpage">
+        <div class="des">
+            <h3>Hello people!</h3>
+            <br>
+            In this webpage you can <strong>Create new pages</strong> or <strong>View</strong> an existing page.
+            <br>
+            You can add your content in Markdown format 
+        </div>
+
+        <div class="wrapper">
+            <h3>Contents</h3>            
+            <hr>
+            <ul style="width: 30%;list-style-type:none;" >
+                {% for entry in entries %}
+                    <div class="ele" >
+                        <a class="contentList" href="{% url 'wiki' entry %} "><li>{{ entry|safe }}</li></a>
+                    </div>     
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <img id="image" src="{% static "images/bg.jpg" %}">
+{% endblock %}

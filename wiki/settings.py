@@ -56,37 +56,54 @@ ROOT_URLCONF = 'wiki.urls'
 
 MARKDOWNIFY = {
   "default": {
-        "STRIP": False,
-        "BLEACH": False,
+        "STRIP": True,
+        "BLEACH": True,
+        "MARKDOWNIFY_LINKIFY_TEXT": True,
         "WHITELIST_TAGS": [
-                'a', 'p',
-                'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'h7',
-                'ul', 'li', 'span','ol',
-                'hr',
-                'abbr',
-                'acronym',
-                'b',
-                'blockquote',
-                'em',
-                'i',
-                'li',
-                'strong',
-         ],
+            'a',
+            'abbr',
+            'acronym',
+            'b',
+            'blockquote',
+            'em',
+            'i',
+            'li',
+            'ol',
+            'p',
+            'strong',
+            'ul'
+        ],
+        "WHITELIST_ATTRS": [
+            'href',
+            'src',
+            'alt',
+        ],
+        "WHITELIST_STYLES": [
+            'color',
+            'font-weight',
+        ],
         "LINKIFY_TEXT": {
             "PARSE_URLS": True,
             "PARSE_EMAIL": True,
             "CALLBACKS": [],
             "SKIP_TAGS": ['pre', 'code',],
         },
+         "WHITELIST_PROTOCOLS": [
+            'http',
+            'https',
+        ],
         "MARKDOWN_EXTENSIONS": [
             'markdown.extensions.fenced_code',
             'markdown.extensions.extra',
+            
         ]
   },
 }
 
 
-
+MARKDOWNIFY_WHITELIST_TAGS = {
+ 'a', 'p', 'h1', 'h2', 'h3','h4', 'h5', 'h6', 'h7', 'ul', 'li', 'span', 'img', 'div', 'abbr', 'acronym', 'em', 'blockquote', 'i', 'strong', 'ol', 'b', 'code'
+}
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

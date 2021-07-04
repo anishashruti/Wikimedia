@@ -1,3 +1,4 @@
+
 # Wikimedia
 ---
 **A Wikipedia-like online encyclopedia.**
@@ -24,4 +25,4 @@ The textarea will be pre-populated with the existing Markdown content of the pag
 **Random Page:** 
 Clicking “Random Page” in the sidebar should take user to a random encyclopedia entry.
 
-
+![home](https://user-images.githubusercontent.com/62645229/124360525-0683f780-dc48-11eb-894d-88814d2987be.PNG)
